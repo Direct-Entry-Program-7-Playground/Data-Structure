@@ -4,6 +4,9 @@ public class Stack {
     private int[] numberArray;
     private int numArrayLength = numberArray.length;
 
+    public Stack() {
+    }
+
     public void push(int number) {
         int[] newNumArray = new int[numArrayLength + 1];
         int newNumArrayLength = newNumArray.length;
