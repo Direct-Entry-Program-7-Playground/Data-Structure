@@ -37,8 +37,8 @@ public class Queue {
 
     public int peek() {
         if (!(queueArray == null) && !(queueArray.length == 0)) {
-            int queueArrayLenght = queueArray.length;
-            return queueArray[queueArrayLenght - 1];
+            int queueArrayLength = queueArray.length;
+            return queueArray[queueArrayLength - 1];
         }
         return 0;
     }
@@ -50,7 +50,19 @@ public class Queue {
     }
 
     public void print() {
+        System.out.print("[");
+        if (!(queueArray == null) && !(queueArray.length == 0)) {
+            int queueArrayLength = queueArray.length;
 
+            for (int i = 0; i < queueArrayLength; i++) {
+                if (i != (queueArrayLength - 1)) {
+                    System.out.print(queueArray[queueArrayLength - 1 - i] + ",");
+                } else {
+                    System.out.print(queueArray[queueArrayLength - 1 - i]);
+                }
+            }
+        }
+        System.out.println("]");
     }
 
     public boolean contains(int number) {
