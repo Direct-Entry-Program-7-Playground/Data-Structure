@@ -36,6 +36,10 @@ public class Queue {
     }
 
     public int peek() {
+        if (!(queueArray == null) && !(queueArray.length == 0)) {
+            int queueArrayLenght = queueArray.length;
+            return queueArray[queueArrayLenght - 1];
+        }
         return 0;
     }
 
