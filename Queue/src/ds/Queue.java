@@ -1,6 +1,7 @@
 package ds;
 
 public class Queue {
+    int queueArray[];
 
     public void enqueue(int number) {
 
@@ -11,7 +12,7 @@ public class Queue {
     }
 
     public boolean empty() {
-        return false;
+        return (queueArray == null) || (queueArray.length == 0);
     }
 
     public int peek() {
