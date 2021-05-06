@@ -19,7 +19,16 @@ public class Queue {
     }
 
     public void dequeue() {
-
+        if (!(queueArray == null) || !(queueArray.length == 0)) {
+            int queueArrayLength = queueArray.length;
+            int[] newQueueArray = new int[queueArrayLength - 1];
+            for (int i = 0; i < queueArrayLength - 1; i++) {
+                newQueueArray[i] = queueArray[i];
+            }
+            queueArray = newQueueArray;
+        } else {
+            System.out.println("Empty queue, nothing to remove!");
+        }
     }
 
     public boolean empty() {
