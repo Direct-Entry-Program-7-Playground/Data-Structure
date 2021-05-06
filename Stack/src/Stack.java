@@ -38,10 +38,21 @@ public class Stack {
                     System.out.print(numberArray[i] + ",");
                 } else {
                     System.out.print(numberArray[i]);
-
                 }
             }
         }
         System.out.print("]");
+    }
+
+    public boolean contains(int num) {
+        if (numArrayLength > 0) {
+            for (int number : numberArray
+            ) {
+                if (num == number) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
