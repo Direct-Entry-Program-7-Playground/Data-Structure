@@ -18,4 +18,8 @@ public class Stack {
         numberArray = newNumArray;
     }
 
+    public boolean empty() {
+        return numberArray.length == 0;
+    }
+
 }
