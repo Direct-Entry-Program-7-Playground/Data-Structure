@@ -18,12 +18,23 @@ public class Stack {
     }
 
     public void pop() {
-        int[] newNumArray = new int[numberArray.length - 1];
-        int newNumArrayLength = newNumArray.length;
-        for (int i = 0; i < newNumArrayLength - 1; i++) {
-            newNumArray[i] = numberArray[i];
+        if (numberArray != null) {
+            int[] newNumArray = new int[numberArray.length - 1];
+            int newNumArrayLength = newNumArray.length;
+            for (int i = 0; i < newNumArrayLength; i++) {
+                newNumArray[i] = numberArray[i];
+            }
+
+            if (numberArray.length == 1) {
+                this.clear();
+            } else {
+                numberArray = newNumArray;
+            }
+
+        } else {
+            System.out.println("Empty stack, nothing to remove");
         }
-        numberArray = newNumArray;
+
     }
 
     public boolean empty() {
@@ -39,8 +50,8 @@ public class Stack {
 
         if (numberArray != null) {
             int numArrayLength = numberArray.length;
-            for (int i = numArrayLength-1; i >= 0; i--) {
-                if (i >=  1) {
+            for (int i = numArrayLength - 1; i >= 0; i--) {
+                if (i >= 1) {
                     System.out.print(numberArray[i] + ",");
                 } else {
                     System.out.print(numberArray[i]);
@@ -66,33 +77,39 @@ public class Stack {
 
     public int peek() {
         int numArrayLength = numberArray.length;
-
         return numberArray[numArrayLength - 1];
+    }
+
+    private int size() {
+        int numbers=0;
+        return numbers= (numberArray != null )? numberArray.length : 0;
     }
 
     public static void main(String[] args) {// to Checking purpose only
         Stack s = new Stack();
         s.print();
-
+        s.pop();
         s.push(10);
-        s.size();
+        s.clear();
+
+        System.out.println(s.size());
+
 
         s.push(20);
         s.push(30);
         s.push(40);
         s.push(50);
-        s.push(60);
-        s.size();
+        s.push(80);
+        System.out.println(s.size());
 
         s.print();
         s.pop();
         s.print();
-        s.size();
+        System.out.println(s.size());
+
         System.out.println(s.peek());
         System.out.println(s.contains(60));
     }
 
-    private void size() {
-        System.out.println(numberArray.length);
-    }
+
 }
