@@ -20,7 +20,9 @@ public class Queue {
     }
 
     public void clear() {
-
+        if (queueArray != null) {
+            queueArray = null;
+        }
     }
 
     public void print() {
@@ -32,6 +34,6 @@ public class Queue {
     }
 
     public int size() {
-        return 0;
+        return queueArray != null ? queueArray.length : 0;
     }
 }
