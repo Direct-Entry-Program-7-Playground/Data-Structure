@@ -39,8 +39,8 @@ public class Stack {
 
         if (numberArray != null) {
             int numArrayLength = numberArray.length;
-            for (int i = 0; i < numArrayLength; i++) {
-                if (i <= numArrayLength-2) {
+            for (int i = numArrayLength-1; i >= 0; i--) {
+                if (i >=  1) {
                     System.out.print(numberArray[i] + ",");
                 } else {
                     System.out.print(numberArray[i]);
@@ -70,5 +70,29 @@ public class Stack {
         return numberArray[numArrayLength - 1];
     }
 
+    public static void main(String[] args) {// to Checking purpose only
+        Stack s = new Stack();
+        s.print();
 
+        s.push(10);
+        s.size();
+
+        s.push(20);
+        s.push(30);
+        s.push(40);
+        s.push(50);
+        s.push(60);
+        s.size();
+
+        s.print();
+        s.pop();
+        s.print();
+        s.size();
+        System.out.println(s.peek());
+        System.out.println(s.contains(60));
+    }
+
+    private void size() {
+        System.out.println(numberArray.length);
+    }
 }
