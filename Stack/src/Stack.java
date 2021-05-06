@@ -2,30 +2,28 @@ import java.util.Arrays;
 
 public class Stack {
     private int[] numberArray;
-    private int numArrayLength = numberArray.length;
-
-    public Stack() {
-    }
 
     public void push(int number) {
-        int[] newNumArray = new int[numArrayLength + 1];
+        int numberArrayLength = 0;
+        if (numberArray != null) {
+            numberArrayLength = numberArray.length;
+        }
+        int[] newNumArray = new int[numberArrayLength + 1];
         int newNumArrayLength = newNumArray.length;
         for (int i = 0; i < newNumArrayLength - 1; i++) {
             newNumArray[i] = numberArray[i];
         }
         newNumArray[newNumArrayLength - 1] = number;
         numberArray = newNumArray;
-        numArrayLength = newNumArrayLength;
     }
 
     public void pop() {
-        int[] newNumArray = new int[numArrayLength - 1];
+        int[] newNumArray = new int[numberArray.length - 1];
         int newNumArrayLength = newNumArray.length;
         for (int i = 0; i < newNumArrayLength - 1; i++) {
             newNumArray[i] = numberArray[i];
         }
         numberArray = newNumArray;
-        numArrayLength = newNumArrayLength;
     }
 
     public boolean empty() {
@@ -39,19 +37,22 @@ public class Stack {
     public void print() {
         System.out.print("[");
 
-        if (numberArray.length > 0) {
-            for (int i = 0; i < numArrayLength - 1; i++) {
-                if (i <= numArrayLength - 2) {
+        if (numberArray != null) {
+            int numArrayLength = numberArray.length;
+            for (int i = 0; i < numArrayLength; i++) {
+                if (i <= numArrayLength-2) {
                     System.out.print(numberArray[i] + ",");
                 } else {
                     System.out.print(numberArray[i]);
                 }
             }
         }
-        System.out.print("]");
+        System.out.println("]");
     }
 
     public boolean contains(int num) {
+        int numArrayLength = numberArray.length;
+
         if (numArrayLength > 0) {
             for (int number : numberArray
             ) {
@@ -64,6 +65,10 @@ public class Stack {
     }
 
     public int peek() {
+        int numArrayLength = numberArray.length;
+
         return numberArray[numArrayLength - 1];
     }
+
+
 }
