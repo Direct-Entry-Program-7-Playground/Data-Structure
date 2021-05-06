@@ -54,6 +54,14 @@ public class Queue {
     }
 
     public boolean contains(int number) {
+        if (!(queueArray == null) && !(queueArray.length == 0)) {
+            for (int num :
+                    queueArray) {
+                if (num == number) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
