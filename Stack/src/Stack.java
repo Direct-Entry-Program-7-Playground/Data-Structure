@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Stack {
     private int[] numberArray;
     private int numArrayLength = numberArray.length;
@@ -22,4 +24,7 @@ public class Stack {
         return numberArray.length == 0;
     }
 
+    public void clear() {
+        numberArray = null;
+    }
 }
