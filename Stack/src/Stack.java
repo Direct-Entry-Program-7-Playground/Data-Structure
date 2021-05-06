@@ -14,10 +14,11 @@ public class Stack {
     public void pop() {
         int[] newNumArray = new int[numArrayLength - 1];
         int newNumArrayLength = newNumArray.length;
-        for (int i = 0; i < newNumArrayLength; i++) {
+        for (int i = 0; i < newNumArrayLength - 1; i++) {
             newNumArray[i] = numberArray[i];
         }
         numberArray = newNumArray;
+        numArrayLength = newNumArrayLength;
     }
 
     public boolean empty() {
@@ -26,5 +27,21 @@ public class Stack {
 
     public void clear() {
         numberArray = null;
+    }
+
+    public void print() {
+        System.out.print("[");
+
+        if (numberArray.length > 0) {
+            for (int i = 0; i < numArrayLength - 1; i++) {
+                if (i <= numArrayLength - 2) {
+                    System.out.print(numberArray[i] + ",");
+                } else {
+                    System.out.print(numberArray[i]);
+
+                }
+            }
+        }
+        System.out.print("]");
     }
 }
