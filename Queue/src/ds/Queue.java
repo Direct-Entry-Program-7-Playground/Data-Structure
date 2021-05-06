@@ -1,10 +1,21 @@
 package ds;
 
 public class Queue {
-    int queueArray[];
+    int[] queueArray;
 
     public void enqueue(int number) {
-
+        if (queueArray == null) {
+            queueArray = new int[1];
+            queueArray[0] = number;
+        } else {
+            int queueArrayLength = queueArray.length;
+            int[] newQueueArray = new int[queueArrayLength + 1];
+            for (int i = 0; i < queueArrayLength; i++) {
+                newQueueArray[i] = queueArray[i];
+            }
+            newQueueArray[queueArrayLength] = number;
+            queueArray = newQueueArray;
+        }
     }
 
     public void dequeue() {
