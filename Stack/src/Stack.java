@@ -6,9 +6,13 @@ public class Stack {
 
     public void push(int number) {
         int[] newNumArray = new int[numArrayLength + 1];
-        numberArray[numArrayLength + 1] = number;
+        int newNumArrayLength = newNumArray.length;
+        for (int i = 0; i < newNumArrayLength - 1; i++) {
+            newNumArray[i] = numberArray[i];
+        }
+        newNumArray[newNumArrayLength - 1] = number;
         numberArray = newNumArray;
-        numArrayLength = newNumArray.length;
+        numArrayLength = newNumArrayLength;
     }
 
     public void pop() {
@@ -54,5 +58,9 @@ public class Stack {
             }
         }
         return false;
+    }
+
+    public int peek() {
+        return numberArray[numArrayLength - 1];
     }
 }
