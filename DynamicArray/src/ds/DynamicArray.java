@@ -19,9 +19,13 @@ public class DynamicArray {
 
     public int get(int index) {
         if (!empty()) {
-
+            if ((index >= 0) && (index < dynamicArray.length)) {
+                return dynamicArray[index];
+            } else {
+                throw new ArrayIndexOutOfBoundsException("Given index is out of bounds");
+            }
         }
-        return 0;
+        throw new RuntimeException("Array is empty");
     }
 
     public void print() {
