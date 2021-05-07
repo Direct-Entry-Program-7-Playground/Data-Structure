@@ -24,7 +24,7 @@ public class DynamicArray {
     }
 
     public void clear() {
-
+        dynamicArray = null;
     }
 
     public int size() {
