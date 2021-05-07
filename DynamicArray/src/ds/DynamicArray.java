@@ -20,7 +20,19 @@ public class DynamicArray {
     }
 
     public void print() {
+        System.out.print("[");
+        if (!this.empty()) {
+            int dynamicArrayLength = dynamicArray.length;
 
+            for (int i = 0; i < dynamicArrayLength; i++) {
+                if (i != (dynamicArrayLength - 1)) {
+                    System.out.print(dynamicArray[dynamicArrayLength - 1 - i] + ",");
+                } else {
+                    System.out.print(dynamicArray[dynamicArrayLength - 1 - i]);
+                }
+            }
+        }
+        System.out.println("]");
     }
 
     public void clear() {
