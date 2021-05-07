@@ -15,6 +15,10 @@ public class QueueTest {
         System.out.println(queue.peek());
 
         queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
 
         System.out.println(queue.size());
         System.out.println(queue.empty());
@@ -41,6 +45,12 @@ public class QueueTest {
         queue.enqueue(90);
         queue.enqueue(100);
 
+        System.out.println(queue.size());
+        System.out.println(queue.empty());
+        System.out.println(queue.peek());
+        queue.print();
+
+        queue.dequeue();
         System.out.println(queue.size());
         System.out.println(queue.empty());
         System.out.println(queue.peek());
