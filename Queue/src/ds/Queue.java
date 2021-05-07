@@ -1,7 +1,7 @@
 package ds;
 
 public class Queue {
-    int[] queueArray;
+    public int[] queueArray;
 
     public void enqueue(int number) {
         if (this.empty()) {
