@@ -37,7 +37,7 @@ public class Queue {
 
     public int peek() {
         if (this.empty()) {
-            return 0;
+            throw new RuntimeException("Queue is empty");
         }
         int queueArrayLength = queueArray.length;
         return queueArray[queueArrayLength - 1];
