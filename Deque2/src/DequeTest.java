@@ -15,7 +15,7 @@ public class DequeTest {
         System.out.println(deque.size());
         System.out.println(deque.empty());
         System.out.println(deque.peek());
-        System.out.println(deque.contains(30));
+        System.out.println(deque.contains(11));
         deque.print();
 
         deque.enqueueRear(13);
@@ -32,7 +32,7 @@ public class DequeTest {
         System.out.println(deque.size());
         System.out.println(deque.empty());
         System.out.println(deque.peek());
-        System.out.println(deque.contains(30));
+        System.out.println(deque.contains(15));
         deque.print();
 
         deque.dequeue();

@@ -25,7 +25,7 @@ public class Deque extends Queue {
             int[] newQueueArray = new int[queueArrayLength - 1];
             int newQueueArrayLength = newQueueArray.length;
             for (int i = 0; i < newQueueArrayLength; i++) {
-                newQueueArray[i] = queueArray[i ];
+                newQueueArray[i] = queueArray[i];
             }
             queueArray = newQueueArray;
         } else {
