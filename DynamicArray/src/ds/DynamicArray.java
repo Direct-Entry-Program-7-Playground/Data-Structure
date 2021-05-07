@@ -35,8 +35,10 @@ public class DynamicArray {
                             newDynamicArray[i] = dynamicArray[i];
                         } else if (i > index) {
                             newDynamicArray[i] = dynamicArray[i + 1];
+                        } else {
+                            newDynamicArray[index] = number;
+
                         }
-                        newDynamicArray[index] = number;
                     }
                     dynamicArray = newDynamicArray;
                 }
