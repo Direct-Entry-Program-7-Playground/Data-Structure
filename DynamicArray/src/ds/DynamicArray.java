@@ -1,5 +1,7 @@
 package ds;
 
+import java.util.Arrays;
+
 public class DynamicArray {
     protected int[] dynamicArray;
 
@@ -16,23 +18,14 @@ public class DynamicArray {
     }
 
     public int get(int index) {
+        if (!empty()) {
+
+        }
         return 0;
     }
 
     public void print() {
-        System.out.print("[");
-        if (!this.empty()) {
-            int dynamicArrayLength = dynamicArray.length;
-
-            for (int i = 0; i < dynamicArrayLength; i++) {
-                if (i != (dynamicArrayLength - 1)) {
-                    System.out.print(dynamicArray[dynamicArrayLength - 1 - i] + ",");
-                } else {
-                    System.out.print(dynamicArray[dynamicArrayLength - 1 - i]);
-                }
-            }
-        }
-        System.out.println("]");
+        System.out.println(Arrays.toString(dynamicArray));
     }
 
     public void clear() {
