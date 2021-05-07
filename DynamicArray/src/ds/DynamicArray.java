@@ -28,7 +28,7 @@ public class DynamicArray {
     }
 
     public int size() {
-        return 0;
+        return dynamicArray == null ? 0 : dynamicArray.length;
     }
 
     public boolean contains(int number) {
