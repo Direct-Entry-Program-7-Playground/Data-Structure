@@ -33,9 +33,10 @@ public class DynamicArray {
                     for (int i = 0; i < newDynamicArrayLength; i++) {
                         if (i < index) {
                             newDynamicArray[i] = dynamicArray[i];
-                        } else {
+                        } else if (i > index) {
                             newDynamicArray[i] = dynamicArray[i + 1];
                         }
+                        newDynamicArray[index] = number;
                     }
                     dynamicArray = newDynamicArray;
                 }
