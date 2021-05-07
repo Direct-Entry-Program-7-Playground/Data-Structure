@@ -6,7 +6,18 @@ public class DynamicArray {
     protected int[] dynamicArray;
 
     public void add(int number) {
-
+        if (this.empty()) {
+            dynamicArray = new int[1];
+            dynamicArray[0] = number;
+        } else {
+            int dynamicArrayLength = dynamicArray.length;
+            int[] newDynamicArray = new int[dynamicArrayLength + 1];
+            for (int i = 0; i < dynamicArrayLength; i++) {
+                newDynamicArray[i] = dynamicArray[i];
+            }
+            newDynamicArray[dynamicArrayLength] = number;
+            dynamicArray = newDynamicArray;
+        }
     }
 
     public void add(int index, int number) {
