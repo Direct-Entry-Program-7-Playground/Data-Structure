@@ -14,7 +14,26 @@ public class DynamicArray {
     }
 
     public void remove(int index) {
-
+        if (!empty()) {
+            int dynamicArrayLength = dynamicArray.length;
+            if ((index >= 0) && (index < dynamicArrayLength)) {
+                if (dynamicArrayLength == 1) {
+                    dynamicArray = null;
+                } else {
+                    int[] newDynamicArray = new int[dynamicArrayLength - 1];
+                    for (int i = 0; i < dynamicArrayLength; i++) {
+                        if (i < index) {
+                            newDynamicArray[i] = dynamicArray[i];
+                        } else {
+                            newDynamicArray[i] = dynamicArray[i + 1];
+                        }
+                    }
+                }
+            } else {
+                throw new ArrayIndexOutOfBoundsException("Given index is out of bounds");
+            }
+        }
+        throw new RuntimeException("Array is empty");
     }
 
     public int get(int index) {
