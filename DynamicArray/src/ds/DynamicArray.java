@@ -65,7 +65,7 @@ public class DynamicArray {
     }
 
     public boolean empty() {
-        return true;
+        return (dynamicArray == null) || (dynamicArray.length == 0);
     }
 }
 
