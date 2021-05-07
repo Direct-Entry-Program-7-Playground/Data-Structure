@@ -61,6 +61,14 @@ public class DynamicArray {
     }
 
     public boolean contains(int number) {
+        if (!this.empty()) {
+            for (int num :
+                    dynamicArray) {
+                if (num == number) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
