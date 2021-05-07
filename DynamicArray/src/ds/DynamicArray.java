@@ -28,6 +28,7 @@ public class DynamicArray {
                             newDynamicArray[i] = dynamicArray[i + 1];
                         }
                     }
+                    dynamicArray = newDynamicArray;
                 }
             } else {
                 throw new ArrayIndexOutOfBoundsException("Given index is out of bounds");
