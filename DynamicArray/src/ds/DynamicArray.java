@@ -21,6 +21,30 @@ public class DynamicArray {
     }
 
     public void add(int index, int number) {
+        if (index >= 0) {
+            if (this.empty()) {
+                dynamicArray = new int[index + 1];
+                dynamicArray[index] = number;
+            } else {
+                int dynamicArrayLength = dynamicArray.length;
+                if (index < dynamicArrayLength) {
+                    int[] newDynamicArray = new int[dynamicArrayLength + 1];
+                    int newDynamicArrayLength = newDynamicArray.length;
+                    for (int i = 0; i < newDynamicArrayLength; i++) {
+                        if (i < index) {
+                            newDynamicArray[i] = dynamicArray[i];
+                        } else {
+                            newDynamicArray[i] = dynamicArray[i + 1];
+                        }
+                    }
+                    dynamicArray = newDynamicArray;
+                }
+
+            }
+        } else {
+            throw new NegativeArraySizeException("Given index is negative");
+        }
+
 
     }
 
